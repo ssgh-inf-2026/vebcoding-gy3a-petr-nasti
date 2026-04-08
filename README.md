@@ -2,17 +2,16 @@
 # Projekt: Vibe coding – webová aplikace
 
 ## Název projektu
-Doplňte název aplikace.
+What should I do today plánovač učení
 
 ## Členové týmu
-- Jméno 1
-- Jméno 2
+- Kopotii Anastasiia
+- Petr Koch
 
 ## Téma aplikace
-Stručně napište, co bude vaše aplikace dělat.
-
+Aplikace připomíná důležité termíny písemek a pomáhá organizovat přípravu na tyto a jiné školní povinnosti.
 ## Cílový uživatel
-Pro koho je aplikace určená?
+Pro studenty ZŠ i SŠ 
 
 ## 3 plánované funkce
 1. Doplňte
