@@ -2,7 +2,7 @@
 # Projekt: Vibe coding – webová aplikace
 
 ## Název projektu
-What should I do today plánovač učení
+What should I do today - plánovač učení
 
 ## Členové týmu
 - Kopotii Anastasiia
@@ -14,9 +14,9 @@ Aplikace připomíná důležité termíny písemek a pomáhá organizovat pří
 Pro studenty ZŠ i SŠ 
 
 ## 3 plánované funkce
-1. Doplňte
-2. Doplňte
-3. Doplňte
+1. včasné připomenutí termínů domácích úkolů nebo písemných prací do 6 dnů následujících  
+2. program, který vymyslí, jak efektivně využít volný čas na povinnosti
+3. nabídne pomoc, případně vysvětlí látku a 
 
 ## Průběh práce
 
