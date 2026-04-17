@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What should I do today - plánovač učení</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Učební plánovač: Co dnes dělat?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>What should I do today?</h1>
-    <p class="subtitle">Toto je startovní šablona projektu pro GitHub Classroom.</p>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>O projektu</h2>
-      <p>
-        Tuto šablonu si upravte podle svého tématu. Změňte nadpis, texty,
-        vstupy, tlačítka i funkce tak, aby odpovídaly vaší vlastní aplikaci.
-      </p>
-    </section>
+    <div class="container">
+        <header>
+            <h1>📅 Co mám dnes dělat?</h1>
+            <p>Tvůj osobní asistent pro efektivní učení a zvládání školy.</p>
+        </header>
 
-    <section class="card">
-      <h2>Testovací část</h2>
-      <label for="userInput">Zadej libovolný text:</label>
-      <input type="text" id="userInput" placeholder="Sem napiš text">
+        <main>
+            <section class="input-section">
+                <label for="userInput">S čím dnes potřebuješ pomoct?</label>
+                <textarea id="userInput" placeholder="Např.: Mám zítra test z matiky a nestíhám úkol z češtiny..."></textarea>
+                
+                <button id="testButton">Sestavit plán učení</button>
+            </section>
 
-      <button id="testButton">Vyzkoušet</button>
+            <section class="output-section">
+                <h2>Tvůj akční plán:</h2>
+                <div id="result" class="result-box">
+                    Sem se vypíše tvoje strategie, až klikneš na tlačítko výše...
+                </div>
+            </section>
+        </main>
 
-      <p id="result">Zde se zobrazí výsledek.</p>
-    </section>
+        <footer>
+            <p>&copy; 2026 Školní projekt - Plánovač učení</p>
+        </footer>
+    </div>
 
-    <section class="card">
-      <h2>Co bude potřeba změnit</h2>
-      <ul>
-        <li>upravte název aplikace,</li>
-        <li>doplňte vlastní obsah,</li>
-        <li>vytvořte vlastní funkci v JavaScriptu,</li>
-        <li>upravte vzhled podle svého projektu.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>Projekt vytvořen v rámci výuky – vibe coding.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
