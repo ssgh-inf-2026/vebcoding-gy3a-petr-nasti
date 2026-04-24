@@ -1,59 +1,30 @@
-document.getElementById('testButton').addEventListener('click', function() {
-    const input = document.getElementById('userInput').value.toLowerCase();
-    const resultDiv = document.getElementById('result');
-    
-    // Validace vstupu
-    if (input.length < 5) {
-        resultDiv.innerHTML = "<p>Zkus mi napsat trochu víc o tom, co tě čeká, ať ti můžu lépe poradit.</p>";
-        return;
-    }
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Učební Plánovač</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
 
-    let planHeading = "Tvůj plán na úspěch";
-    let adviceList = [];
+    <div class="container">
+        <h1>📅 Co dnes dělat?</h1>
+        
+        <div class="card">
+            <label for="userInput">Zadej své úkoly (např. test, referát, zítra...):</label>
+            <textarea id="userInput" placeholder="Napiš sem, co tě čeká ve škole..."></textarea>
+            <button id="testButton">Sestavit plán</button>
+        </div>
 
-    // --- LOGIKA RAD PODLE OBSAHU ---
-
-    // 1. Pokud jde o těžký test nebo zkoušení
-    if (input.includes("test") || input.includes("písemka") || input.includes("zkoušení")) {
-        planHeading = "🎯 Strategie pro zvládnutí testu";
-        adviceList.push("<strong>Prvních 15 min:</strong> Rychle si projdi celou látku a vypiš si 10 nejdůležitějších pojmů/vzorců.");
-        adviceList.push("<strong>Metoda 'Zkus to vysvětlit':</strong> Představ si, že látku vysvětluješ mladšímu sourozenci. Pokud se zasekneš, tam máš mezeru.");
-        adviceList.push("<strong>Práce s chybou:</strong> Projdi si minulé testy a zaměř se na to, kde jsi minule udělal chybu.");
-    } 
-
-    // 2. Pokud student nestíhá (panika)
-    if (input.includes("nestíhám") || input.includes("zítra") || input.includes("moc")) {
-        planHeading = "🔥 Krizový režim: Jak to zachránit";
-        adviceList.push("<strong>Pravidlo 80/20:</strong> Nauč se 20 % nejdůležitější látky, která tvoří 80 % testu. Detaily teď vynech.");
-        adviceList.push("<strong>Blokování rozptylování:</strong> Dej mobil do jiné místnosti. Teď jde o každou minutu.");
-        adviceList.push("<strong>Spánek:</strong> I když nestíháš, spi aspoň 6 hodin. Mozek si musí látku uložit, jinak ji ráno zapomeneš.");
-    }
-
-    // 3. Pokud jde o kreativní věci (referáty, slohy)
-    if (input.includes("referát") || input.includes("projekt") || input.includes("slohu")) {
-        planHeading = "✍️ Jak efektivně vytvořit projekt";
-        adviceList.push("<strong>Struktura:</strong> Nejdřív si napiš body (úvod, 3 hlavní myšlenky, závěr).");
-        adviceList.push("<strong>Vizuály:</strong> Pokud máš prezentaci, vyber 3 silné obrázky místo hromady textu.");
-    }
-
-    // --- GENEROVÁNÍ VÝSLEDNÉHO HTML ---
-
-    // Pokud se nepodařilo najít klíčové slovo, dáme obecnou radu
-    if (adviceList.length === 0) {
-        adviceList.push("Rozděl si učení na 25minutové bloky s 5minutovou pauzou.");
-        adviceList.push("Před začátkem si ukliď stůl – čisté prostředí = čistá hlava.");
-    }
-
-    resultDiv.innerHTML = `
-        <div style="animation: fadeIn 0.5s ease-in-out;">
-            <h3 style="color: #2d5af7; margin-bottom: 15px;">${planHeading}</h3>
-            <ul style="text-align: left; line-height: 1.6;">
-                ${adviceList.map(item => `<li style="margin-bottom: 10px;">${item}</li>`).join('')}
-            </ul>
-            <div style="margin-top: 20px; padding: 10px; background: #f0f4ff; border-radius: 8px; font-size: 0.9em; color: #555;">
-                <strong>Tip asistenta:</strong> Po každém splněném bodu si odškrtni políčko na papíře. Ten pocit vítězství tě nakopne k další práci!
+        <div class="card">
+            <h2>Tvůj akční plán:</h2>
+            <div id="result">
+                Zatím jsi nic nezadal.
             </div>
         </div>
-    `;
-});
-    
+    </div>
+
+</body>
+</html>
