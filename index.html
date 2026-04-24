@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Učební plánovač: Co dnes dělat?</title>
+    <title>Učební parťák | Co dnes dělat?</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
+    <div class="app-container">
         <header>
-            <h1>📅 Co mám dnes dělat?</h1>
-            <p>Tvůj osobní asistent pro efektivní učení a zvládání školy.</p>
+            <div class="logo">🚀 <span>Učební Plánovač</span></div>
+            <h1>Co máš dnes v plánu?</h1>
+            <p>Zadej své úkoly a já ti pomůžu sestavit nejlepší strategii.</p>
         </header>
 
         <main>
-            <section class="input-section">
-                <label for="userInput">S čím dnes potřebuješ pomoct?</label>
-                <textarea id="userInput" placeholder="Např.: Mám zítra test z matiky a nestíhám úkol z češtiny..."></textarea>
+            <section class="card input-card">
+                <label for="userInput">Napiš, co tě čeká (písemky, úkoly, zkoušení):</label>
+                <textarea 
+                    id="userInput" 
+                    placeholder="Např.: Zítra písemka z matiky, ve čtvrtek referát z dějepisu..."
+                ></textarea>
                 
-                <button id="testButton">Sestavit plán učení</button>
+                <button id="testButton">
+                    <span>Vytvořit efektivní plán</span>
+                </button>
             </section>
 
-            <section class="output-section">
-                <h2>Tvůj akční plán:</h2>
-                <div id="result" class="result-box">
-                    Sem se vypíše tvoje strategie, až klikneš na tlačítko výše...
+            <section class="card result-card">
+                <h2>📋 Tvůj doporučený postup:</h2>
+                <div id="result">
+                    <p class="placeholder-text">Zatím jsi nic nezadal. Napiš své povinnosti a klikni na tlačítko výše!</p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Školní projekt - Plánovač učení</p>
+            <div class="status-bar">
+                <span>Status: Připraven k učení</span>
+                <span>2026 &copy; Školní projekt</span>
+            </div>
         </footer>
     </div>
 
