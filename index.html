@@ -4,27 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Učební Plánovač</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <style>
+        /* Styl jsem dal přímo sem, aby to hned vypadalo k světu */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef2f7; padding: 20px; display: flex; justify-content: center; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        h1 { color: #2c3e50; text-align: center; font-size: 24px; }
+        label { display: block; margin-bottom: 10px; font-weight: bold; color: #34495e; }
+        textarea { width: 100%; height: 120px; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; box-sizing: border-box; resize: none; font-size: 16px; }
+        button { width: 100%; background-color: #3498db; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 15px; transition: background 0.3s; }
+        button:hover { background-color: #2980b9; }
+        #result { margin-top: 25px; padding: 15px; border-radius: 8px; background-color: #f9f9f9; border-left: 5px solid #3498db; min-height: 50px; }
+        .plan-item { margin-bottom: 10px; }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>📅 Co dnes dělat?</h1>
+        <h1>🚀 Plánovač učení</h1>
         
-        <div class="card">
-            <label for="userInput">Zadej své úkoly (např. test, referát, zítra...):</label>
-            <textarea id="userInput" placeholder="Napiš sem, co tě čeká ve škole..."></textarea>
-            <button id="testButton">Sestavit plán</button>
-        </div>
+        <label for="userInput">Co tě dnes čeká?</label>
+        <textarea id="userInput" placeholder="Např.: Mám zítra test z matiky..."></textarea>
+        
+        <button id="testButton">Vytvořit plán</button>
 
-        <div class="card">
-            <h2>Tvůj akční plán:</h2>
-            <div id="result">
-                Zatím jsi nic nezadal.
-            </div>
+        <div id="result">
+            <p style="color: #7f8c8d;">Zadej úkol a klikni na tlačítko.</p>
         </div>
     </div>
+
+    <script>
+        // Kód je přímo tady, takže se nemůže stát, že se nenačte soubor
+        document.getElementById('testButton').addEventListener('click', function() {
+            const input = document.getElementById('userInput').value.toLowerCase().trim();
+            const resultDiv = document.getElementById('result');
+
+            if (input === "") {
+                resultDiv.innerHTML = "<p style='color:red;'>Napiš mi nejdřív, co máš za školní povinnosti!</p>";
+                return;
+            }
+
+            let planHtml = "";
+
+            // Rozhodování na základě klíčových slov
+            if (input.includes("test") || input.includes("písemka") || input.includes("zkoušení")) {
+                planHtml = `
+                    <h3 style="margin-top:0; color:#e67e22;">📝 Plán na učení:</h3>
+                    <div class="plan-item"><strong>1. Rychlý přehled (15 min):</strong> Projdi si nadpisy a zvýrazněný text v sešitě.</div>
+                    <div class="plan-item"><strong>2. Metoda testování:</strong> Zakryj text a zkus si nahlas říct definice.</div>
+                    <div class="plan-item"><strong>3. Pauza:</strong> Po 25 minutách si dej 5 minut oraz bez mobilu.</div>
+                `;
+            } else if (input.includes("úkol") || input.includes("referát") || input.includes("projekt")) {
+                planHtml = `
+                    <h3 style="margin-top:0; color:#27ae60;">✍️ Plán na úkol:</h3>
+                    <div class="plan-item"><strong>1. Příprava:</strong> Otevři si dokument nebo sešit a vypni všechna oznámení.</div>
+                    <div class="plan-item"><strong>2. První krok:</strong> Napiš jen úvod nebo první dvě věty. Pak už to půjde samo.</div>
+                    <div class="plan-item"><strong>3. Kontrola:</strong> Na konci si to jednou nahlas přečti, jestli to dává smysl.</div>
+                `;
+            } else {
+                planHtml = `
+                    <h3 style="margin-top:0; color:#2980b9;">💡 Obecná strategie:</h3>
+                    <div class="plan-item">Nejdřív udělej ten nejtěžší úkol, ať ho máš z krku.</div>
+                    <div class="plan-item">Uč se v tichu a pij dost vody.</div>
+                `;
+            }
+
+            // Vložení plánu do stránky
+            resultDiv.innerHTML = planHtml;
+        });
+    </script>
 
 </body>
 </html>
